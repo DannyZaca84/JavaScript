@@ -160,12 +160,166 @@ The id attribute defines the HTML element. The innerHTML property defines the HT
     A javaScript program is a list of programming statements.
 Note: In HTML, JavaScript programs are executed by the web browser.
 </p>
+<!-- 
+Example of declaring variables -->
 
+<h1 id="title">JavaScript Variables</h1>
+<p>Creating a variable and assigning a value to it, then display it:<br>Car Name:</p>
 
+<p id="demo11"></p>
 
+<script>
+    var carName = "Nissan";
+    document.getElementById("demo11").innerHTML = carName;
+</script>
+<!-- Example of Declaring Many Variables in One Statement -->
+<p>It is possible to declare many variables in one statement. Start the statement with 'var' and separate the variables with a comma:</p>
+<p id="demo12"></p>
+<script>
+    var person = "Daniel Luna", CarName = "Volvo", price= 20000;
+    document.getElementById("demo12").innerHTML = CarName;
+</script>
+<h1 id="title">Constant Arrays</h1>
+<p>You can change the elements of a Constant array:<br>
+    Declaring a constant array does NOT make the elements unchangeable:
+</p>
 
+<p id="demo13"></p>
+<script>
+    //Create an array
+    const cars = ["BMW","Toyota","Ferrari"];
+    //Change an element
+    cars[1] = "Buggatti";
 
+    //Add an element
+    cars.push("Lamborghini");
 
+    // Display the array
+    document.getElementById("demo13").innerHTML = cars;
+</script>
+<h1 id="title">Constant Objects</h1>
+<P>You can change the properties of a constant object:</P>
+<p id="demo14"></p>
+<p id="demo15"></p>
+<script>
+    // Create an object:
+    const car = {type:"Honda", model:"Civic", color:"burgundy"}
+
+    // Change a property
+    car.color = "silver";
+
+    // Add a property
+    car.owner = "Daniel";
+    
+    // Display the cars array
+    document.getElementById("demo14").innerHTML = car.type + "," + car.model + "," + car.color + ".";
+
+    // Display the property
+    document.getElementById("demo15").innerHTML = "Car owner is " + car.owner;
+</script>
+<h1 id="title">JavaScript Functions</h1>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo16"></p>
+
+<script>
+    function multiplyFunction(p1, p2) {
+        return p1*p2;
+    }
+    document.getElementById("demo16").innerHTML = multiplyFunction(5,18);
+</script>
+<h1 id="title">The Function Return</h1>
+<p>When JavaScript reaches a return statement, the function will stop executing. If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement. Functions often compute a return value. The return value is "return" back to the "caller".
+<br>
+This example calls a function which performs a calculation and returns the result:
+</p>
+
+<p id="demo17"></p>
+
+<script>
+    var ret = myReturnFunction(44,33);
+
+    document.getElementById("demo17").innerHTML = ret;
+
+    function myReturnFunction(a,b) {
+        return a*b;
+    }
+
+</script>
+<br>
+<p>Why Functions? Code can be reused: Define the code once, and use it many times. For example:
+<br>
+This example calls a function to convert from Fahrenheit to Celsius:
+</p>
+
+<!-- Fahrenheit to Celsius Converter -->
+<p id="demo18"></p>
+<script>
+    function toCelsius(f) {
+        return (5/9) * (f-32);
+    }
+    document.getElementById("demo18").innerHTML = toCelsius(113);
+</script>
+ <p>Accessing a function without () will return the function definition instead of the result:</p>
+<p id="demo19"></p>
+<script>
+function CelsiusTo(f) {
+    return (5/9) * (f -32);
+}
+document.getElementById("demo19").innerHTML = toCelsius; // The parenthesis is missing, therefor, the return value will be the function itself.
+</script>
+<h1 id="title">Functions Used as Variable Values</h1>
+<p>Functions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.</p>
+
+<h3>Example:</h3>
+<p>Instead of using a variable to store the return value of a function:
+    <code>let x = toCelsius(77);
+          let text = "The temperature is " + x " Celsius";
+    </code><br>
+    You can use the function directly as a variable value:
+    <code>
+        let text = "The temperature is " + toCelsius(77) + " Celsius";
+    </code>
+</p>
+<!-- Examples -->
+<p id="demo20"></p>
+
+<script>
+    document.getElementById("demo20").innerHTML = "The temperature is " + toCels(77) + " Celsius";
+
+    function toCels(fahren){
+        return (5/9) * (fahren-32);
+    }
+</script>
+<h1 id="title">Local Variables</h1>
+<p>It's important to clarify that 'variables' that are declared within a JavaScript function, become LOCAL VARIABLES, meaning that can only be accessed within the same block of code. For example:
+<code>
+    //code here can NOT use carName
+
+    fucntion myFunction() {
+        let carName = "Nissan";
+    // code here CAN use/refer to carName
+    }
+    // code here can NOT use carName
+</code>
+</p>
+<p>Outside of the function carName is undefine</p>
+<p id="demo21"></p>
+<p id="demo22"></p>
+<script>
+    myFunction2();
+
+    function myFunction2() {
+        let carName2 = "BMW";
+
+        document.getElementById("demo21").innerHTML = typeof carName2 + " " + carName2;
+
+    }
+
+    document.getElementById("demo22").innerHTML = typeof carName2;
+</script>
+<p>Since local variables are only recognized inside their functions, variables with the same name can be used in different functions. Local variables are created when a functions starts, and deleted when the function is completed.</p>
 
 </body>
 </html>

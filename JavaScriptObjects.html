@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Make the website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO and description of the content of the website -->
+    <meta name="description" content="SEO goes here - Add keywords">
+    <meta name="application-name" content="The object-fit Property">
+    <!-- favicon images - the image that will be displayed in the tab(s) of the browser -->
+    <link rel="icon" type="images/x-icon" href="Images/FaviconFiles/favicon.ico">
+    <!-- Add the fonts that will be used by the website -->
+    <link rel="stylesheet" href="fonts url goes here">
+    <title>JavaScript Objects</title>
+    <style>
+        #title {
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        /* Draw a table */
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Real Life Objects, Properties, and Methods</h1>
+    <p>In real life, car is an object.<br>A car has properties like weight and color, and methods like start and
+        stop.<br>
+        All cars have the same properties, but the property values differ from car to car.<br>
+        All cars have the same methods, but the methods are performed at different times.
+    </p>
+    <h2 id="title">
+        JavaScript Objectss
+    </h2>
+
+    <p>You have already learned that JavaScript variables are containers for data values. This code assigns a simple
+        value (Fiat) to a variable named car:<br>
+        <code>
+            let car = "Mitsubishi";
+        </code>
+    </p>
+    <p id="demo1"></p>
+
+    <!--Create and display a variable-->
+    <script>
+        let car = "Mitsubishi";
+
+        document.getElementById("demo1").innerHTML = car;
+    </script>
+
+    <p>Objects are variables too. But objects can contain many values.<br>
+        This code assigns many values (Mitsubishi, Galant, Burgundy) to a variable named car:
+        <code>
+            const car = {type:"Mitsubishi", model:"Galant", color:"White"};
+        </code>
+    </p>
+    <P id="demo2"></P>
+    <script>
+        // Create an object 
+        const carObject = { type: "Mitsubishi", model: "Galant", Color: "Burgundy" };
+
+        // Display some data from the object:
+        document.getElementById("demo2").innerHTML = "The car type is " + car.type;
+    </script>
+    <p>The values are written as name:value pars (name and value separated by a colon).<br>
+        It is a common practice to declare objects with the const keyword.<br>
+    </p>
+    <h2 id="title">Object Definition</h2>
+    <br>
+    <p>You define (and create a JavaScript object with an object literal:
+        <code>
+            const person = {firstName:"Daniel", lastName:"Luna", age:37, eyeColor:"brown"};
+        </code>
+    </p>
+    <P id="demo3"></P>
+    <script>
+        //Create an object
+        const person = { firstName: "Daniel", lastName: "Luna", age: 37, eyeColor: "brown" };
+
+        //Display some data from the object:
+        document.getElementById("demo3").innerHTML = person.firstName + " is " + person.age + " years old. And He has " + person.eyeColor + " eyes."
+    </script>
+    <p>There are two ways to for accessing an object properti.<br>
+    <ol>
+        <li><code>objectName.propertyName</code></li>
+        <li><code>objectName["propertyName"]</code></li>
+    </ol>
+    <br>
+    JavaScript objects are containers for name values called properties.<br>
+
+    <h2 id="title">Object Methods</h2>
+
+    Objects can also have methods.<br>
+    Methods are actions that can be performed on objects.<br>
+    Methods are stored in properties as function definitions.
+    <br>In other words, a method is a function stored as a property. Example:
+    <br>
+    <code>const person = {
+            firstName: "Daniieel",
+            lastName: "Lunaa",
+            id: 1984,
+            fullName: function(){
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        </code>
+    </p>
+    <h2 id="title">The this Keyword</h2>
+    <p>In a function definition, this refers to the 'owner' of the function. In the example above, this is the person
+        object that 'owns' the fullName function.<br>
+        In other words, "this.firstName" means the firstName property of this object.<br><br>
+        To access an object method with the following syntax:
+        <br>
+        <code>objectName.methodName()
+        <br>
+        name = person.fullName();
+    </code>
+        <br>
+        If you access a method without the () parentheses, it will return the function definition:
+        Example:
+        <br>
+        <code>
+        name = person.fullName;
+    </code>
+    </p>
+
+    <br><br>
+    <h1 id="title">JavaScript Events</h1>
+    <p>HTML events are "things" that happen to HTML elements.
+        <br>
+        When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+    </p>
+    <h2 id="title">
+        HTML Events
+    </h2>
+    <p>An HTML event can be something the browser does, or something a user does.<br>
+        Here are some examples of HTML events:
+    <ul>
+        <li>An HTML web page has finished loading</li>
+        <li>An HTML input field was changed</li>
+        <li>An HTML button was clicked</li>
+    </ul>
+    Often, when events happen, you may want to do something.<br><br>
+    JavaScript lets you execute code when events are detected.<br><br>
+    HTML allows event handler attributes, with javaScript code, to be added to HTML elements.<br>
+    <br>
+    With single quotes:
+    <br><br>
+    <code>
+    < element event='some JavaScript' >
+</code>
+    <br><br>
+    With double quotes:<br><br>
+    <code>
+    < element event="some JavaScript" >
+</code>
+    <br><br>
+    In the following example, an onclick attribute (with code), is added to a 'button' element:<br>Example:<br><br>
+    <code>
+    < button onclick="document.getElementById('demo').innerHTML = Date()">The time is? >
+</code>
+    </p>
+    <button onclick="document.getElementById('demo4').innerHTML = Date()">The time is?</button>
+    <p id="demo4"></p>
+    <p>In the example above, the JavaScript code changes the content of the element with id="demo".<br><br>
+        In the next example, the code changes the content of its own element (using this.innerHTML):<br><br>
+        <code>< button onclick="this.innerHTML = Date()"> The time is?</></code>
+    </p>
+    < onclick="this.innerHTML = Date()">The time is?</ button>
+    <p>JavaScript code is often several lines long. It is more common to see events attributes calling functions,
+        Example:
+        <br>
+        <code>< button button onclick="displayDate">The time is?</ ></code>
+    </p>
+    < onclick="displayDate()">The time is?</ button>
+    <!-- Function to be called by the event displayDate() -->
+    <script>
+        function displayDate() {
+            document.getElementById("demo5").innerHTML = Date();
+        }
+    </script>
+    <p id="demo5"></p>
+    <h1 id="title">Common HTML Events</h1>
+    <p>Here is a list of some common HTML events:</p>
+
+<table>
+    <tr>
+        <th>Event</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>onchange</td>
+        <td>An HTML element has been changed</td>
+    </tr>
+    <tr>
+        <td>onclick</td>
+        <td>The user clicks an HTML element</td>
+    </tr>
+    <tr>
+        <td>onmouseover</td>
+        <td>The user moves the mouse over an HTML element/td>
+    </tr>
+    <tr>
+        <td>onmouseout</td>
+        <td>The user moves the mouse away from an HTML element</td>
+    </tr>
+    <tr>
+        <td>onkeydown</td>
+        <td>The user pushes a keyboard key</td>
+    </tr>
+    <tr>
+        <td>onload</td>
+        <td>The browser has finished loading the page</td>
+    </tr>
+</table>
+</body>
+
+</html>
