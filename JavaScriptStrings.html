@@ -254,13 +254,111 @@ let padded = text.padStart(17, 4);<br>
     </script>
 
 <!-- JavaScript Strings -->
-<h1 id="title">JavaScript Strings</h1>
-<h6></h6>
+<h1 id="title">JavaScript Strings Search</h1>
+<p>JavaScript methods for searching strings:
+    <ul>
+        <li>String indexOf()</li>
+        <li>String lastIndex()</li>
+        <li>String startsWith()</li>
+        <li>String endsWith()</li>
+    </ul>
+</p>
 
+<h2 id="title">String indexOf()</h2>
+<p>The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string:<br><br>
+<code>
+    let str="Please locate where 'locate' occurs!";<br><br>
+    str.indexOf("locate");
+</code></p>
+<p id="demo15"></p>
+<script>
+    let str1 = "Please locate where 'locate' occurs!";
+    document.getElementById("demo15").innerHTML = str1.indexOf("locate");
+</script>
+<h2 id="title">String lastIndexOf()</h2>
+<p>The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:<br><br>
+<code>
+    let str = "Please locate where 'locate' occurs!";<br>
+    str.lastIndexOf();
+</code></p>
+<p id="demo16">
+</p>
+<script>
+let str2 = "Please locate where 'locate' occurs!";
+document.getElementById("demo16").innerHTML = str2.lastIndexOf("locate");
+</script>
+<p>Both indexOf(), and lasIndexOf() return -1 if the text is not found. The lastIndexOf() methods searches backwards (from the end to the beginning).</p>
+<h1 id="title">String search()</h1>
+<p>The search() method search a string value and returns the position of the match.<br>
+    <code>
+    let str = "please locate where 'locate' occurs!;
+    <br>
+    str.search("locate");        
+    </code>
+</p>
+<p id="demo17"></p>
+<script>
+    let str3 = "Please locate where 'locate'/ occurs!";
+    document.getElementById("demo17").innerHTML = str3.search("locate");
+</script>
+<br>
+<br>
+<h1 id="title">JavaScript Template Literals</h1>
+<h3 id="title">Back-Tics Syntax</h3>
+<p>Template Literals use back-ticks (``) rather than quotes ("") to define a string.<br>
+<code>
+    let text = `Hello World`;
+</code></p>
+<p id="demo18"></p>
 
+<script>
+    let text6 = `Hello World!`;
+    document.getElementById("demo18").innerHTML = text6;
+</script>
+<h3 id="title">Quotes Inside Strings</h3>
+<p>With template literals, you can use both single and double quotes inside a string.<br><br>
+<code>
+    let text = `He's often called "Daniel"`;
+</code>
+</P>
+<h1>JavaScript Template Literals</h1>
+<p>Template literals allows variables in string:<br><br>
+<code>
+    let price = 10;<br>
+    let VAT = 0.75;<br>
+    let total = `Total: ${(price *(1 + VAT)).toFixed(3)}`;<br>
 
+    document.getElementById("demo19").innerHTML = total;<br>
 
+</code>
+</p>
+<p id="demo19"></p>
+<script>
+    let price = 10;
+    let VAT = 0.75;
+    let total = `Total: ${(price *(1 + VAT)).toFixed(3)}`;
 
+    document.getElementById("demo19").innerHTML = total;
+</script>
+
+<h1 id="title">JavaScript Template Literals</h1>
+<p>Template literals allows variables in strings.</p>
+<p id="demo20"></p>
+<script>
+    let header = "Templates Literals";
+    let tags = ["Template Literals", "javaScript","es6"];
+
+    let html = `<h2>${header}</h2<ul>`;
+
+    for (const x of tags) {
+        html += `<li>${x}</li>`;
+    }
+
+    html += `</ul>`;
+
+    document.getElementById("demo20").innerHTML = html;
+
+</script>
 
 
 </body>
