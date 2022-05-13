@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Make the website responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SEO and description of the content of the website -->
+        <meta name="description" content="SEO goes here - Add keywords">
+        <meta name="application-name" content="The object-fit Property">
+        <!-- favicon images - the image that will be displayed in the tab(s) of the browser -->
+        <link rel="icon" type="images/x-icon" href="images/FaviconFiles/favicon.ico">
+        <!-- Add the fonts that will be used by the website -->
+        <link rel="stylesheet" href="fonts url goes here">
+        <title>JavaScript Arrays</title>
+        <style>
+            #title {
+                font-weight: bolder;
+                text-align: center;
+            }
+            body{
+                background-color: antiquewhite;
+            }
+        </style>
+</head>
+<body>
+    <h1 id="title">JavaScript Arrays</h1>
+    <p>An array is a special variable, which  an hold more than one value. For example:<br><br>
+        <code>
+            const cars = ["Toyota","Nissan","Chevy"];
+        </code>
+    </p>
+    <br>
+    <p id="demo1"></p>
+<script>
+    const cars = ["Toyota","Nissan","Chevy"];
+    document.getElementById("demo1").innerHTML = cars;
+</script>
+<h2 id="title">Why Using an Array?</h2>
+<p>If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:<br>
+    <br>
+    <code>
+        let car1 = "Saab";<br>
+        let car2 = "Volvo";<br>
+        let car3 = "BMW";<br>
+    </code><br>
+    However, what if you want to loop through the cars and find a specific one? And what if you had not 3 vars, but 300?<br>
+    The solution is an array!<br>
+    An array can hold many values under a single name, and you can access the values by referring to an index number.
+</p>
+<h1 id="title">Creating an Array</h1>
+<P>Using an array literal is the easiest way to create a JavaScript Array.<br>
+
+</P>
+<p>
+    <p style="font-style: oblique;">Syntax:</p>
+    <code>
+    const array_name = [item1, item2, ...];<br>
+    NOTE: It is common practice to declare an array with the 'CONST' keyword.
+</code>
+<br><br>
+It is also possible to create an array, and then provide the elements later:<br>
+<br>
+<code>
+    const cars = [];<br>
+    cars[0]= "Mitsubishi";<br>
+    cars[1]="Volvo";<br>
+    cars[2]= "BMW";<br>
+    cars[3] = "Toyota";
+</code>
+</p>
+
+<p id="demo2"></p>
+<script>
+    const cars2 = [];
+    cars2[0] = "Mitsubishi";
+    cars2[1] = "Volvo";
+    cars2[2] = "BMW";
+    cars2[3] = "Toyota";
+    // Display array
+    document.getElementById("demo2").innerHTML = cars2;
+</script>
+<p>Another way to crate an array is by using the key word new:<br>
+<code>const cars = new Array("Saab", "Volvo", "BMW");</code>
+</p>
+<p id="demo3"></p>
+<script>const cars3 = new Array("Saab","Volvo", "BMW");
+document.getElementById("demo3").innerHTML = cars3;
+</script>
+
+<h1 id="title">Accessing Array Elements</h1>
+<p>To access an array element, simply refer to the INDEX NUMBER, for example:
+    <br><br>
+
+    <code>
+        const cars = ["Toyota","Nissan","Chevy"];<br>
+        let car = cars[2];
+    </code>
+</p>
+<p id="demo5"></p>
+<script>
+    const cars4 = ["Toyota","Nissan","Chevy"];
+    document.getElementById("demo5").innerHTML = cars4[2];
+</script>
+<h1 id="title">Changing an Array Element</h1>
+<p>This statement changes the value of the first element in cars:<br><br>
+<code>
+    cars[0] = "changed";<br>
+</code><br>
+Example:
+</p>
+<p id="demo6"></p>
+<script>
+    cars[0] = "Changed";
+    document.getElementById("demo6").innerHTML = cars;
+</script>
+<h1 id="title">Looping Array Elements</h1>
+<p>One way to loop through an array, is using a `for` loop.<br>
+<code>
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+    let fLen = fruits.length;<br>
+</p>
+<p id="demo7"></p>
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("demo7").innerHTML = text;
+</script>
+<p>Another way is using the Array.forEach() function:
+    <br>
+    <code>
+        const fruit = ["Banana", "Orange", "Apple", "Mango"];
+
+        let text = `<ul>`;
+            fruits.forEach(myFunction);
+            text += "</ul>";
+
+            function myFunction(value) {
+                text =+ "<li>" + value + "</li>";
+            }
+    </code>
+</p>
+
+<p>Array.forEach() calls a function for each array element.</p>
+<p id="demo8"></p>
+<script>
+    const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+
+    let text8 = "<ul>";
+    fruits1.forEach(myFunction1);
+    text8 += "</ul>"
+
+    document.getElementById("demo8").innerHTML = text8;
+
+    function myFunction1(value) {
+        text8 += "<li>" + value + "</li>";
+    }
+</script>
+<h1 id="title">Adding Array Elements</h1>
+<p>The easiest way to add a new element to an array is using the 'push()' method.
+<br>
+<br>
+<code>
+    const fruits2 = ["Banana","Orange","Apple"];<br>
+    fruits2.push("Lemon");
+</code>
+<h4 id="title">Adding (pushing) elements into an array</h4>
+<br><button onclick="myFunction3()">Add element</button>
+<br>
+<p id="demo9"></p>
+
+<script>
+    const fruits2 = ["Banana","Orange","Apple"];
+
+    document.getElementById("demo9").innerHTML = fruits2;
+
+    function myFunction3 () {
+        fruits2.push("Strawberry");
+
+
+    document.getElementById("demo9").innerHTML = fruits2;
+    }
+
+</script>
+<br>
+<br>
+The length property can also add elements to an array.
+</p>
+<br><button onclick="myFunction4()">Add an element.</button>
+<p id="demo10"></p>
+<script>
+    const fruits3 = ["Banana","Orange","Apple"];
+
+    document.getElementById("demo10").innerHTML = fruits3;
+
+    function myFunction4(){
+        fruits3[fruits3.length] = "Kiwi";
+
+        document.getElementById("demo10").innerHTML = fruits3;
+    }
+
+</script>
+<h1 id="title">JavaScript Array delete()</h1>
+<p><b style="color: red;"><important>WARNING!</important></b><br><br>
+Array elements can be deleted using the JavaScript delete. Using delete leaves undefined holes in the array. Use pop() or shift() methods instead.
+</p>
+<p id="demo11"></p>
+<p id="demo12"></p>
+
+<script>
+    const fruits4 = ["Banana","Orange","Apple","Mango"];
+
+    document.getElementById("demo11").innerHTML = "The first fruit is: " + fruits4[0];
+
+    delete fruits4[0];
+
+    document.getElementById("demo12").innerHTML = "The first fruit is: " + fruits4[0];
+
+</script>
+<p>The first element on the array is a hole, hence the reason of 'undefine' output.<br>
+<br>
+The splice() method adds new elements to an array, and returns an array with the deleted elements (if any):
+</p>
+
+<p id="demo13"></p>
+<p id="demo14"></p>
+<p id="demo15"></p>
+
+<script>
+    const fruits5 = ["Banana","Orange","Apple","Mango"];
+
+    document.getElementById("demo13").innerHTML = "Original Array:<br> " + fruits5;
+
+    let removed = fruits5.splice(2,2, "Lemon", "Kiwi");
+    document.getElementById("demo14").innerHTML = "New Array:<br>" + fruits5;
+
+    document.getElementById("demo15").innerHTML = "Removed Items:<br> " + removed;
+</script>
+<br>
+<h1 id="title">The Compare Function</h1>
+<p>The purpose of the compare function is to define an alternative sort order. The compare functions should return a negative, zero, or positive value, depending on the arguments.
+<br><br>
+<code>
+    function(a,b){return a - b}
+</code>
+<br><br>
+When the sort() function compares two values, it sends the values to the compare functio, and sorts the values according to the returned (negative, zero, positive) value.<br><br>
+If the result is negative a is sorted before b.<br><br>
+If the result is positive n is sorted before a.<br><br>
+If the result is 0 no changes are done with the sort order of the two values. Example:<br><br>
+The compare function compares all the values in the array, two values at time (a, b).<br><br>
+WHen comparing 40 and 100, the sort() method calls the compare function(40, 100).<br><br>
+The function calculates 40-100 (a - b), and since the result is negative (40 - 100 = -60), the sort function will sort 40 as a value lower than 100.<br><br>
+You can use this code snippet to experiment with numerically and alphabetically sorting:
+</p>
+<br><br>
+<h1 id="title">JavaScript Array Sort</h1>
+<p>Click the buttons to sort the array alphabetically or numerically.</p>
+<br>
+<button onclick="myFunction6()">Sort Alphabetically</button>
+<button onclick="myFunction7()">Sort Numerically</button>
+<br>
+<p id="demo16"></p>
+
+<script>
+    const points9 = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo16").innerHTML = points9;  
+    
+    function myFunction6() {
+      points9.sort();
+      document.getElementById("demo16").innerHTML = points9;
+    }
+    function myFunction7() {
+      points9.sort(function(a, b){return a - b});
+      document.getElementById("demo16").innerHTML = points9;
+    }
+    </script>
+<h1 id="title">Sorting an Array in Random Order</h1>
+<button onclick="myFunction8()">Random Sort</button>
+<p id="demo17"></p>
+
+<script>
+    const points2 = [19,54,87,37,25,10,76,2,8,22];
+    
+    document.getElementById("demo17").innerHTML = points2;
+
+    function myFunction8() {
+        points2.sort(function(a,b){return 0.5 - Math.random()});
+
+        document.getElementById("demo17").innerHTML = points2;
+    }
+</script>
+<h1 id="title">The Fisher Yates Method</h1>
+<p>The above example, array.sort(), is not accurate, it will favor some numbers over the others. The most popular correct method, is called `THE FISHER YATES SHUFFLE`, and was introduced in data science as early as 1938.<br>
+In JavaScript the method can be translated to this:
+<br><br>
+<code>
+    const points3 = [19,54,87,37,25,10,76,2,8,22];
+
+    for(let i = points3.length -1; > 0; i--){
+        let j = Math.floor(Math.random() * i)
+        let k = points3[i]
+        points3[i] = points3[j]
+        points3[j] = k
+    }
+</code>
+</p>
+<button onclick="myFunction10()">Fisher Yates Method</button>
+<p id="demo18"></p>
+<script>
+    const points3 = [40, 100, 1, 5, 25, 10,19,54,87,37,25,10,76,2,8,22];
+    document.getElementById("demo18").innerHTML = points3;  
+    
+    function myFunction10() {
+      for (let i = points3.length -1; i > 0; i--) {
+        let j = Math.floor(Math.random() * i)
+        let k = points3[i]
+        points3[i] = points3[j]
+        points3[j] = k
+      }
+      document.getElementById("demo18").innerHTML = points3;
+    }
+    </script>
+<br><br>
+<p>This methods sorts an array using a min / max method.<br><br>
+This function loops through an array comparing each value with the highest value found.
+</p>
+<br>
+<br>
+<p id="demo20"></p>
+<p>The highest number is <span id="demo19">.</span></p>
+
+<script>
+    const points4 = [40, 100, 1, 5, 25, 10,19,54,87,37,25,10,76,2,8,22];
+
+    document.getElementById("demo20").innerHTML = points4;
+    document.getElementById("demo19").innerHTML = myArrayMax(points4);
+
+    function myArrayMax(arr) {
+        let len = arr.length;
+        let max = -Infinity;
+        while (len--){
+            if (arr[len]> max){
+                max = arr[len];
+            }
+        }
+        return max;
+    }
+
+</script>
+<h1 id="title">Find the Highest or Lowest Array Value</h1>
+<p>There are no built-in functions for finding the max or min value in an array. However, after you have sorted an array, you can use the index to obtain the highest and lowest values<br>
+<br>
+</p>
+
+<p>The lowest number is <span id="demo21"></span>.</p>
+<p id="demo22"></p>
+
+<script>
+    points9.sort(function(a,b){return a-b});
+    
+    document.getElementById("demo21").innerHTML = points9[0];
+    document.getElementById("demo22").innerHTML = points9;
+</script>
+
+<h1 id="title">JavaScript Array forEach() Method</h1>
+<p>The forEach() method calls a function (a call function) once for each array element.</p>
+<p id="demo23"></p>
+<p id="demo24"></p>
+
+<script>
+
+const numbers2 = [3,53,76,11,24,98,5,7,8,33,65,36,25,10];
+
+let txt = "";
+
+numbers2.forEach(myFunction11);
+
+document.getElementById("demo23").innerHTML = numbers2;
+document.getElementById("demo24").innerHTML = txt;
+
+function myFunction11(value, index, array){
+    txt += value + "<br>";
+}
+
+</script>
+
+
+
+
+</body>
+</html>

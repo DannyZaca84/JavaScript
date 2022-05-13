@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sorting Arrays</title>
+    <meta charset="UTF-8">
+    <!-- Make the website responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO and description of the content of the website -->
+    <meta name="description" content="SEO goes here - Add keywords">
+    <meta name="application-name" content="The object-fit Property">
+    <!-- favicon images - the image that will be displayed in the tab(s) of the browser -->
+    <link rel="icon" type="images/x-icon" href="Images/FaviconFiles/favicon.ico">
+    <!-- Add the fonts that will be used by the website -->
+    <link rel="stylesheet" href="fonts url goes here">
+    
+    <style>
+        #title {
+            font-weight: bolder;
+            text-align: center;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+        </style>
+</head>
+<body>
+    <h1 id="title">JavaScript Sorting Arrays</h1>
+    <h3 id="title">Sorting an Array</h3>
+    <p>The sort() methods sorts an array alphabetically.<br><br>
+        <code>
+            const fruits = ["Banana", "Orange", "Apple", "Mango"];<br>
+            fruits.sort();
+        </code>
+    </p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <!-- Sorting Example -->
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo1").innerHTML = fruits;
+
+        fruits.sort();
+        document.getElementById("demo2").innerHTML = fruits;
+    </script>
+    <h2 id="title">Reversing an Array</h2>
+    <p>The reverse() method reverses the elements in an array. It is also possible to sort an array in descending order.<br><br>
+    <code>
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];<br>
+        fruits2.sort();<br>
+        fruits2.reverse();
+    </code>
+    </p>
+    <!-- reverse array sorting -->
+    <p>The reverse() method reverses the elements in an array. By combining sort() and reverse() methods, you can sort an array in descending order:</p><br>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <script>
+        // Create an array and display it
+        const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo3").innerHTML = fruits3;
+
+        // sort the array first
+        fruits3.sort();
+
+        // Reverse the array
+        fruits3.reverse();
+        document.getElementById("demo4").innerHTML = fruits3;
+    </script>
+    <h2 id="title">Numeric Sort</h2>
+    <p>By default, the sort() function sorts values as strings. This works well for string ("Appple" comes before "Banana"). However, if numbers are sorted as string, "25" is bigger than "100", because "2" is bigger than "1".<br>
+    Because of this, the sort() method will produce incorrect result whe  sorting numbers.<br>
+    Use a compare function to fix it!<br><br>
+    <code>
+        const point = [40, 100, 1, 5, 25, 10];
+        points.sort(function(a,b)
+        {
+            return a - b
+        });
+    </code>
+    </p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <script>
+        const points1 = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo5").innerHTML = points1;
+
+        points1.sort(function(a, b){
+            return a - b
+        });
+
+        document.getElementById("demo6").innerHTML = points1;
+    </script>
+
+    <!-- Sorting alphabetically and sorting numerically example -->
+    <p>Click the buttons to sort the array</p>
+
+    <button onclick="myFunction1()">Sort Alphabetically</button>
+    <button onclick="myFunction2()">Sort Numerically</button>
+
+    <p id="demo7"></p>
+    <script>
+        const points2 = [40,100,5,55,89,23,9,11,34,43];
+        document.getElementById("demo7").innerHTML = points2;
+
+        function myFunction1(){
+            points2.sort();
+
+            document.getElementById("demo7").innerHTML = points2;
+        }
+
+        function myFunction2(){
+            points2.sort(function(a,b){ return a - b});
+
+            document.getElementById("demo7").innerHTML = points2;
+        }
+        
+    </script>
+
+
+
+
+</body>
+</html>
